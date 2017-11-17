@@ -4,6 +4,7 @@
     
     class Matrix{
     public:
+        //matrix constructor
         Matrix(int A, int B, int C, int D){
         int values[4] = {A,B,C,D};
         
@@ -16,6 +17,7 @@
             }
         }
         
+        //prints matrix cells
         void print(ostream &os) const {
             
             os << v[0][0] << " " << v[0][1] << endl;
@@ -23,6 +25,7 @@
             os << "- - - - - -" << endl;
          }
         
+        //adds a values to all cells
         void add(const int& rhs){
             for(int o = 0; o<2; o++){
                 for(int i = 0; i<2; i++){
@@ -31,6 +34,7 @@
             }
         }
         
+        //adds two matrices
         void add(const Matrix& m){
             for(int o = 0; o<2; o++){
                 for(int i = 0; i<2; i++){
@@ -39,6 +43,7 @@
             }
         }
         
+        //subtracts a values to all cells
         void sub(const int& rhs){
             for(int o = 0; o<2; o++){
                 for(int i = 0; i<2; i++){
@@ -47,6 +52,7 @@
             }
         }
         
+        //subtracts two matrices
         void sub(const Matrix& m){
             for(int o = 0; o<2; o++){
                 for(int i = 0; i<2; i++){
@@ -54,6 +60,8 @@
                 }
             }
         }
+        
+        //operators to overload a specific key
         void operator+(const int& rhs){
             add(rhs);
         }
@@ -74,9 +82,11 @@
     };
     
     int main(){
+        //makes two matrices
         Matrix m1(1,1,1,1);
         Matrix m2(2,2,2,2);
         
+        //runs all methods with and without operators
         cout << "Staring Matrix 1" << endl;
         m1.print(cout);
         
